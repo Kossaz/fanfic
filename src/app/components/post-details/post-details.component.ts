@@ -13,6 +13,7 @@ export class PostDetailsComponent implements OnInit {
   currentPost: Post = {
     title: '',
     description: '',
+    fullpost: '',
     published: false
   };
   message = '';
@@ -43,6 +44,7 @@ export class PostDetailsComponent implements OnInit {
     const data = {
       title: this.currentPost.title,
       description: this.currentPost.description,
+      fullpost: this.currentPost.fullpost,
       published: status
     };
 

@@ -23,7 +23,16 @@
           name="description"
         />
       </div>
-
+      <div class="form-group">
+        <label for="fullpost">Content</label>
+        <input
+          class="form-control"
+          id="fullpost"
+          required
+          [(ngModel)]="post.fullpost"
+          name="fullpost"
+        />
+      </div>
       <button (click)="savePost()" class="btn btn-success">Submit</button>
     </div>
 

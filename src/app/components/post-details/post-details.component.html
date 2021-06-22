@@ -22,7 +22,16 @@
           name="description"
         />
       </div>
-
+      <div class="form-group">
+        <label for="fullpost">Content</label>
+        <input
+          type="text"
+          class="form-control"
+          id="fullpost"
+          [(ngModel)]="currentPost.fullpost"
+          name="fullpost"
+        />
+      </div>
       <div class="form-group">
         <label><strong>Status:</strong></label>
         {{ currentPost.published ? "Published" : "Pending" }}

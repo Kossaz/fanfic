@@ -17,15 +17,20 @@ public class Post {
   @Column(name = "description")
   private String description;
 
+  @Column(name = "fullpost")
+  private String fullpost;
+
   @Column(name = "published")
   private boolean published;
 
   public Post() {
   }
 
-  public Post(String title, String description, boolean published) {
+
+  public Post(String title, String description, String fullpost, boolean published) {
     this.title = title;
     this.description = description;
+    this.fullpost = fullpost;
     this.published = published;
   }
 
@@ -53,6 +58,14 @@ public class Post {
     this.description = description;
   }
 
+  public String getFullpost() {
+    return fullpost;
+  }
+
+  public void setFullpost(String fullpost) {
+    this.fullpost = fullpost;
+  }
+
   public boolean isPublished() {
     return published;
   }
@@ -62,6 +75,6 @@ public class Post {
   }
   @Override
   public String toString() {
-    return "Tutorial [id=" + id + ", title=" + title + ", desc=" + description + ", published=" + published + "]";
+    return "Post [id=" + id + ", title=" + title + ", desc=" + description + ", fullpost=" + fullpost + ", published=" + published + "]";
   }
 }
