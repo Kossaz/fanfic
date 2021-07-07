@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Fanfic } from '../models/fanfic.model';
 
-const baseUrl = 'http://localhost:8080/api/fanfics';
+const baseUrl = 'http://localhost:8090/api/fanfics';
 
 @Injectable({
   providedIn: 'root'
