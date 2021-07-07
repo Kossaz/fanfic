@@ -1,0 +1,78 @@
+<div>
+  <div class="submit-form col-md-12 mx-auto">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          [(ngModel)]="fanfic.title"
+          name="title"
+          required
+          minlength="6"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          class="form-control"
+          id="description"
+          [(ngModel)]="fanfic.description"
+          name="description"
+          required
+          minlength="6"
+        />
+      </div>
+
+      <div class="form-floating">
+        <label for="fullpost">Content</label>
+        <textarea
+          class="form-control"
+          id="fullpost"
+          [(ngModel)]="fanfic.fullpost"
+          name="fullpost"
+          placeholder="write you fanfic"
+          rows="9"
+          required
+          minlength="6"
+        >
+        </textarea>
+
+      </div>
+      <div class="form-group">
+        <label for="tag">Tag</label>
+        <input
+          class="form-control"
+          id="tag"
+          [(ngModel)]="fanfic.tag"
+          name="tag"
+          required
+          minlength="6"
+        />
+      </div>
+
+        <div class="form-group">
+          <label for="fandom">Fandom</label>
+          <input
+            class="form-control"
+            id="fandom"
+            [(ngModel)]="fanfic.fandom"
+            name="fandom"
+            required
+            minlength="6"
+          />
+        </div>
+
+
+      <button (click)="saveFanfic()" class="btn btn-success">Submit</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Fanfic was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newFanfic()">Add</button>
+    </div>
+  </div>
+</div>
+

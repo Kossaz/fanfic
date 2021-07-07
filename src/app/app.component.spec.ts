@@ -20,10 +20,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Angular12JwtAuth'`, () => {
+  it(`should have as title 'Fanfics'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Angular12JwtAuth');
+    expect(app.title).toEqual('Fanfics');
   });
 
   it('should render title', () => {

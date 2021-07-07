@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,9 +11,11 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
-import { AddPostComponent } from './components/add-post/add-post.component';
-import { PostDetailsComponent } from './components/post-details/post-details.component';
-import { PostsListComponent } from './components/posts-list/posts-list.component';
+import { AddFanficComponent } from './components/add-fanfic/add-fanfic.component';
+import { FanficDetailsComponent } from './components/fanfic-details/fanfic-details.component';
+import { FanficsListComponent } from './components/fanfics-list/fanfics-list.component';
+import { HomeComponent } from "./home/home.component";
+import { ContentComponent } from './components/content/content.component';
 
 @NgModule({
   declarations: [
@@ -23,16 +25,19 @@ import { PostsListComponent } from './components/posts-list/posts-list.component
     ProfileComponent,
     BoardAdminComponent,
     BoardUserComponent,
-    AddPostComponent,
-    PostsListComponent,
-    PostDetailsComponent,
+    AddFanficComponent,
+    HomeComponent,
+    FanficsListComponent,
+    FanficDetailsComponent,
+    ContentComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        ReactiveFormsModule
+    ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })

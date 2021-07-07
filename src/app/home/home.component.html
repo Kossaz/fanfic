@@ -1,5 +1,50 @@
-<div class="container">
-  <header class="jumbotron">
-    <p>{{ content }}</p>
-  </header>
+<div class="list row">
+  <div class="col-md-8 ">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by title"
+        [(ngModel)]="title"
+
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchTitle()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 mx-auto">
+    <h4>Posts List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item "
+        *ngFor="let fanfic of fanfics; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveFanfic(fanfic, i)"
+      > <div class="d-flex bd-highlight mb-3">
+        <div class="p-2 bd-highlight"><b>{{ fanfic.title }}</b></div>
+        <div class="ml-auto p-2 bd-highlight">{{ fanfic.fandom }}</div>
+      </div>
+        {{ fanfic.description }}
+        <div class="d-flex bd-highlight mb-3">
+          <div class="p-2 bd-highlight">{{ fanfic.tag }}</div>
+          <div class="ml-auto p-2 bd-highlight"><button class="btn btn-info btn-sm" routerLink="/fanfics/{{ currentFanfic.id }}">
+            Read
+          </button>
+          </div>
+        </div>
+        </li>
+    </ul>
+
+    <div *ngIf="!currentFanfic">
+      <br />
+      <p>Please click on a Post...</p>
+    </div>
+  </div>
 </div>

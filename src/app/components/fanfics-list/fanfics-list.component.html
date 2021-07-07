@@ -1,0 +1,83 @@
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="search"
+        class="form-control mr-sm-2"
+        placeholder="Search by title"
+        [(ngModel)]="title"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-success my-2 my-sm-0"
+          type="button"
+          (click)="searchTitle()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <h4>Fanfics List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item "
+        *ngFor="let fanfic of fanfics; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveFanfic(fanfic, i)"
+      >  <div class="d-flex bd-highlight mb-3">
+          <div class="p-2 bd-highlight"><b>{{ fanfic.title }}</b></div>
+          <div class="ml-auto p-2 bd-highlight">{{ fanfic.fandom }}</div>
+        </div>
+        {{ fanfic.description }}
+        <div class="d-flex bd-highlight">
+          <div class="p-2 flex-grow-1 bd-highlight">{{ fanfic.tag }}</div>
+          <div class="p-2 bd-highlight"><a class="btn btn-info btn-sm" routerLink="/fanfics/{{ currentFanfic.id }}">
+            Read
+          </a>
+          </div>
+          <div class="p-2 bd-highlight"><a class="btn btn-info btn-sm" routerLink="/fanfics/{{ currentFanfic.id }}/edit">
+            Edit
+          </a>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentFanfic.id">
+      <h4>Fanfic</h4>
+      <div>
+        <label><strong>Title:</strong></label> {{ currentFanfic.title }}
+      </div>
+      <div>
+        <label><strong>Description:</strong></label>
+        {{ currentFanfic.description }}
+      </div>
+      <div>
+        <label><strong>Fullpost:</strong></label>
+        {{ currentFanfic.fullpost  }}
+      </div>
+      <div>
+        <label><strong>Fandom:</strong></label>
+        {{ currentFanfic.fandom }}
+      </div>
+      <div>
+        <label><strong>Tag:</strong></label>
+        {{ currentFanfic.tag }}
+      </div>
+      <a class="badge badge-warning" routerLink="/fanfics/{{ currentFanfic.id }}">
+        Edit
+      </a>
+    </div>
+
+    <div *ngIf="!currentFanfic">
+      <br />
+      <p>Please click on a Fanfic...</p>
+    </div>
+  </div>
+</div>

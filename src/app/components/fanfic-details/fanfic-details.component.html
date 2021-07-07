@@ -1,0 +1,83 @@
+<div>
+  <div *ngIf="currentFanfic.id" class="edit-form ">
+    <h4>Fanfic</h4>
+    <form>
+      <div class="form-group ">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          [(ngModel)]="currentFanfic.title"
+          name="title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="currentFanfic.description"
+          name="description"
+        />
+      </div>
+
+      <div class="form-floating">
+        <label for="fullpost">Content</label>
+        <textarea
+          class="form-control"
+          id="fullpost"
+          [(ngModel)]="currentFanfic.fullpost"
+          name="fullpost"
+          placeholder="write you fanfic"
+          rows="9"
+          required
+          minlength="6"
+        >
+        </textarea>
+      </div>
+        <div class="form-group">
+          <label for="tag">Tag</label>
+          <input
+            type="text"
+            class="form-control"
+            id="tag"
+            [(ngModel)]="currentFanfic.tag"
+            name="tag"
+          />
+        </div>
+
+          <div class="form-group">
+            <label for="fandom">Fandom</label>
+            <input
+              type="text"
+              class="form-control"
+              id="fandom"
+              [(ngModel)]="currentFanfic.fandom"
+              name="fandom"
+            />
+        </div>
+
+    </form>
+
+
+    <button class="badge badge-danger mr-2" (click)="deleteFanfic()">
+      Delete
+    </button>
+
+    <button
+      type="submit"
+      class="badge badge-success mb-2"
+      (click)="updateFanfic()"
+    >
+      Update
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentFanfic.id">
+    <br />
+    <p>Cannot access this Fanfic...</p>
+  </div>
+</div>
