@@ -8,10 +8,10 @@
     <relativePath/>
   </parent>
   <groupId>com.courseproject.fanfic</groupId>
-  <artifactId>spring-boot-security-jwt</artifactId>
+  <artifactId>fanfics</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>fanfic</name>
-  <description>SpringBS JWT</description>
+  <description>Fanfics Spring Boot</description>
   <properties>
     <java.version>16</java.version>
   </properties>
